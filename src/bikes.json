@@ -1,0 +1,23 @@
+[
+    {
+        "brand": "specialized",
+        "reference": "Epic Hardtail",
+        "size": "medium",
+        "purpose": "mountain",
+        "id": 1
+    },
+    {
+        "brand": "scott",
+        "reference": "Spark rc",
+        "size": "XL",
+        "purpose": "mountain",
+        "id": 2
+    },
+    {
+        "brand": "scott",
+        "reference": "Addict rc pro",
+        "size": "medium",
+        "purpose": "road",
+        "id": 3
+    }
+]
