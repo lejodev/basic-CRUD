@@ -23,12 +23,33 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     const {brand, reference, size, purpose} = req.body;
-    const {id} = req.params;
-    _.each(bikes, (bike, i) => {// iterating over the bikes.json array
-        console.log(bike.id == id);
+    const id = req.params.id;
+    console.log(req.body);
+    if(brand && reference && size && purpose){
+        _.each(bikes, (bike, i) => {
+            if(id == bike.id){
+                bike.brand = brand;
+                bike.reference = reference;
+                bike.size = size;
+                bike.purpose = purpose;
+                res.json(bikes);
+            }
+        });
+    }else{
+        res.json({"Error": "Incomplete info"});
+    }
+});
+
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    _.each(bikes, (bike, i) => {
         if(bike.id == id){
-            res.json("Same id");
-        }
+            console.log(bike);
+            bikes.splice(i, 1);
+            res.json(bikes);}
+        // }else{
+        //     res.json({"Error": "Not valid data"});
+        // }
     });
 });
 
